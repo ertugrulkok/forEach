@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box active" id="box" onclick="yuvarla()"></div>
+      <div class="box" id="box" onclick="yuvarla()"></div>
+      <div class="box" id="box" onclick="yuvarla()"></div>
+      <div class="box" id="box" onclick="yuvarla()"></div>
+      <div class="box" id="box" onclick="yuvarla()"></div>
+    </div>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(77, 6, 6);
+      }
+
+      .container {
+        display: flex;
+        gap: 50px;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        cursor: pointer;
+        transform: rotate(360deg);
+      }
+
+      .box.active {
+        border-radius: 50px;
+        background-color: blanchedalmond;
+        cursor: pointer;
+     
+      }
+    </style>
+
+    <script>
+      const kutu = document.querySelectorAll(".box");
+
+      //     kutu.onclick = function () {
+      //     kutu.forEach((box) => {
+      //       kutu.classList.add("active");
+      //     });
+      //   };
+    //   kutu.forEach((mahmut) => {
+    // //     yuvarla();
+    // //     mahmut.classList.add("active");
+    // //   });
+
+
+
+
+
+      ///<------------------------------>
+
+
+
+   
+
+    
+
+    //   function yuvarla() {
+    //     kutu.forEach((mahmut) => {
+    //       mahmut.classList.remove("active");
+    //     });
+    //   }
+
+    //   kutu.forEach((mahmut) => {
+    //     yuvarla();
+    //     mahmut.classList.add("active");
+    //   });
+
+
+//------------------------------------>
+
+
+      function yuvarla() {
+
+      
+        kutu.forEach((mahmut) => {
+          mahmut.classList.remove("active");
+        });
+      }
+
+      kutu.forEach((mahmut) => {
+        mahmut.addEventListener("click", () => {
+          yuvarla();
+          mahmut.classList.add("active");
+         
+        });
+      });
+    </script>
+  </body>
+</html>
